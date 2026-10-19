@@ -1,6 +1,7 @@
 
 import { auth, signOut } from "@/auth";
 import { redirect } from "next/navigation";
+import TicketsPanel from "./tickets-panel";
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -114,17 +115,7 @@ export default async function DashboardPage() {
           </aside>
         </div>
 
-        <section className="mt-8 rounded-2xl border border-dashed border-white/15 bg-white/2 p-8">
-          <p className="text-sm font-medium text-indigo-300">Coming later</p>
-          <h2 className="mt-2 text-xl font-semibold">
-            Your support workspace
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
-            Ticket management, conversations, team workflows, and AI-assisted
-            support will be added in their planned phases. No sample ticket
-            data is being presented as real data here.
-          </p>
-        </section>
+        <TicketsPanel />
       </section>
     </main>
   );
